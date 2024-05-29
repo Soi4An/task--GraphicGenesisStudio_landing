@@ -1,7 +1,7 @@
 @import "./styles/variables";
 @import "./styles/mixins";
 
-body {
+.body {
   font-family: "Mulish", sans-serif;
   font-size: 20px;
   line-height: 26px;
@@ -11,5 +11,9 @@ body {
   @include onMobile {
     font-size: 14px;
     line-height: 18px;
+  }
+
+  &__with-menu {
+    overflow: hidden;
   }
 }

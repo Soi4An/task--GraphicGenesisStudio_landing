@@ -4,7 +4,7 @@ import classNames from "classnames";
 function ButtonMenu({ menuSwitch, isMenu }) {
   return (
     <button
-      className={classNames("menu-button", { "menu-button__open": isMenu })}
+      className={classNames("menu-button", { "menu-button--open": isMenu })}
       onClick={menuSwitch}
     >
       <span className="menu-button__bar menu-button__bar--top" />

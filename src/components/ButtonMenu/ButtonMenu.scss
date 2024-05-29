@@ -19,15 +19,15 @@
     transition: all $transition-time ease-in-out;
   }
 
-  &__open &__bar--top {
+  &--open &__bar--top {
     transform: translateY(8px) rotate(45deg);
   }
 
-  &__open &__bar--middle {
+  &--open &__bar--middle {
     opacity: 0;
   }
 
-  &__open &__bar--bottom {
+  &--open &__bar--bottom {
     transform: translateY(-8px) rotate(-45deg);
   }
 

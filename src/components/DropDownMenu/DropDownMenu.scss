@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  
+  height: 0;
+  width: 100%;
+  overflow-y: hidden;
+  transition: height $transition-time;
+  background: linear-gradient(to bottom, $color-bg-black, #12121280), url('../../images/bg_neurons.png') no-repeat top center;
+  background-size: cover;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &--open {
+    height: calc(100vh - $height-header - 42px);
+    min-height: min-content;
+    overflow-y: auto;
+  }
+
+  &__button-sign-up {
+    margin-bottom: 20px;
+
+    @include onTabletAndDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    padding-bottom: 20px;
+  }
+}

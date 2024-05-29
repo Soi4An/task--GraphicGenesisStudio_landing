@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 20px 0 40px;
 
   &__nav {
     @include onMobileAndTablet {
@@ -13,12 +14,16 @@
   }
 
   &__button-sign-up {
+    height: $height-header;
+
     @include onMobile {
       display: none;
     }
   }
 
   &__button-menu {
+    margin-left: 49px; // 84(logo) - 36(sundwich)
+
     @include onDesktop {
       display: none;
     }
