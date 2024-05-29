@@ -6,11 +6,15 @@ function App() {
   const [isMenu, setIsMenu] = useState(false);
 
   const menuSwitch = useCallback(() => setIsMenu(curr => !curr), []);
-  const menuHidden = useCallback(() => setIsMenu(false), []);
+  const menuHidden = useCallback(() => setIsMenu(curr => {
+    if (curr === true) {
+      return false;
+    }
+  }), []);
 
   return (
     <div>
-      <Header menuHidden={menuHidden} menuSwitch={menuSwitch} />
+      <Header menuHidden={menuHidden} menuSwitch={menuSwitch} isMenu={isMenu} />
 
       {/* <DropDownMenu /> */}
     </div>

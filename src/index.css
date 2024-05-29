@@ -11,3 +11,9 @@ ul {
 a {
   text-decoration: none;
 }
+
+button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}

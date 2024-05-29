@@ -1,10 +1,14 @@
 import logo from "../../images/logo_ukr.png";
+import "./Logo.scss";
 
-function Logo() {
+function Logo({ menuHidden }) {
   return (
-    <span>
+    <a href='/' onClick={menuHidden} className="logo__wrapper">
       <img src={logo} alt="logo" />
-    </span>
+    </a>
+    // <span className="logo__wrapper">
+    //   <img src={logo} alt="logo" />
+    // </span>
   );
 }
 

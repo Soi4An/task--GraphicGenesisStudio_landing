@@ -1,27 +1,26 @@
 import ButtonCustom from "../ButtonCustom/ButtonCustom";
+import ButtonMenu from "../ButtonMenu/ButtonMenu";
 import HeaderList from "../HeaderList/HeaderList";
 import Logo from "../Logo/Logo";
-import './Header.scss';
+import "./Header.scss";
 
-function Header({ menuSwitch, menuHidden }) {
+function Header({ menuSwitch, menuHidden, isMenu }) {
   return (
     <header className="header">
-      <Logo />
+      <Logo menuHidden={menuHidden} />
 
       <nav className="header__nav">
         <HeaderList />
       </nav>
 
       <div className="header__button-sign-up">
-        <ButtonCustom text={'Записатися'} type={'black'} />
+        <ButtonCustom text={"Записатися"} type={"black"} />
       </div>
 
-      <div>
-        {/* <ButtonMenu /> */}
+      <div className="header__button-menu">
+        <ButtonMenu menuSwitch={menuSwitch} isMenu={isMenu} />
       </div>
     </header>
-
-    
   );
 }
 

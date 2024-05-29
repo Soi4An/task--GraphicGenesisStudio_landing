@@ -16,4 +16,10 @@
       // display: none;
     }
   }
+
+  &__button-menu {
+    @include onDesktop {
+      // display: none;
+    }
+  }
 }
