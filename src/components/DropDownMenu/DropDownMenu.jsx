@@ -1,13 +1,10 @@
 import ButtonCustom from "../ButtonCustom/ButtonCustom";
 import HeaderList from "../HeaderList/HeaderList";
 import "./DropDownMenu.scss";
-import classNames from "classnames";
 
-function DropDownMenu({ isMenu }) {
+function DropDownMenu() {
   return (
-    <nav className={classNames(
-      'menu', { 'menu--open': isMenu }
-    )}>
+    <nav className="menu">
       <div className="menu__button-sign-up">
         <ButtonCustom text={"Записатися"} type={"black"} />
       </div>

@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import Header from "./Header/Header";
-import Container from "./Container/Container";
-import DropDownMenu from "./DropDownMenu/DropDownMenu";
+import Header from "../Header/Header";
+import Container from "../Container/Container";
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
+import "./HeaderAndMenu.scss";
+import classNames from "classnames";
+import { debounce } from "lodash";
 
 const HeaderAndMenu = () => {
   const [isMenu, setIsMenu] = useState(false);
@@ -17,6 +20,20 @@ const HeaderAndMenu = () => {
     []
   );
 
+  const handleSetPhotosQuantity = debounce(() => {
+    if (window.innerWidth >= 1440) {
+      menuHidden();
+    }
+  }, 200);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleSetPhotosQuantity);
+
+    return () => {
+      window.removeEventListener("resize", handleSetPhotosQuantity);
+    };
+  }, [handleSetPhotosQuantity]);
+
   useEffect(() => {
     if (isMenu) {
       document.body.classList.add("body__with-menu");
@@ -26,7 +43,9 @@ const HeaderAndMenu = () => {
   }, [isMenu]);
 
   return (
-    <div>
+    <header
+      className={classNames("header-menu", { "header-menu--open": isMenu })}
+    >
       <Container>
         <Header
           menuHidden={menuHidden}
@@ -35,8 +54,8 @@ const HeaderAndMenu = () => {
         />
       </Container>
 
-      <DropDownMenu isMenu={isMenu} />
-    </div>
+      <DropDownMenu />
+    </header>
   );
 };
 
