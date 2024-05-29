@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text: #2d2d2d;
+  --color-title: #181833;
+  --color-green: #179d2e;
+  --color-blue: #0177b8;
+  --color-hover-link: #4485a8;
+  --color-yellow: #f5af23;
+  --color-red: #f02e2c;
+  
+  --section-padding: 24px;
+  --global-gap: 24px;
+  --card-width: 425px;
+  
+  --screen-mobile: var(--card-width); /* 425px */
+  --screen-tablet: calc(var(--card-width) * 2 + var(--global-gap) * 1); /* 875px */
+  --screen-desktop: calc(var(--card-width) * 3 + var(--global-gap) * 2); /* 1325px */
+  --screen-xl-desktop: calc(var(--card-width) * 4 + var(--global-gap) * 3); /* 1772px */
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--color-text);
+}
