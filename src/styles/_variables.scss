@@ -21,12 +21,20 @@ $color-white: #ffffff;
 $color-dark-white: #d7d7d7;
 $color-violet: #8b57c2;
 $color-violet-hover: #ba79ff;
+$color-violet-active: #7838bd;
 $color-pink: #ef85ec;
 $color-yellow: #fecb00;
 
 // $screen-mobile: 360px;
 $screen-tablet: 768px;
 $screen-desktop: 1440px;
+
+$container-padding-mob: 20px;
+$container-padding-tabl: 82px;
+$container-content-width-tabl: 604px;
+$container-content-width-desk: 1230px;
+$container-width-tabl: $container-content-width-tabl + $container-padding-mob * 2;
+$container-width-desk: $container-content-width-desk + $container-padding-tabl * 2;
 
 $transition-time: 300ms;
 

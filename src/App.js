@@ -1,6 +1,7 @@
 import './App.scss';
 import { useCallback, useState } from 'react';
 import Header from './components/Header/Header';
+import Container from './components/Container/Container';
 
 function App() {
   const [isMenu, setIsMenu] = useState(false);
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <div>
-      <Header menuHidden={menuHidden} menuSwitch={menuSwitch} isMenu={isMenu} />
+      <Container>
+        <Header menuHidden={menuHidden} menuSwitch={menuSwitch} isMenu={isMenu} />
+      </Container>
 
       {/* <DropDownMenu /> */}
     </div>

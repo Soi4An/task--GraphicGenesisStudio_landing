@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $container-content-width-desk;
+
+  @include onMobile {
+    padding: 0 $container-padding-mob;
+    max-width: $container-width-tabl;
+  }
+
+  @include onTablet {
+    padding: 0 $container-padding-tabl;
+    max-width: $container-width-desk;
+  }
+}
