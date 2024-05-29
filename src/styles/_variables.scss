@@ -20,9 +20,13 @@ $color-bg-linear-gradient: linear-gradient(
 $color-white: #ffffff;
 $color-dark-white: #d7d7d7;
 $color-violet: #8b57c2;
+$color-violet-hover: #ba79ff;
+$color-black-hover: #636363;
 $color-pink: #ef85ec;
 $color-yellow: #fecb00;
 
 // $screen-mobile: 360px;
 $screen-tablet: 768px;
 $screen-desktop: 1440px;
+
+$transition-time: 300ms;

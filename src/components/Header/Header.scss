@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__nav {
+    @include onMobileAndTablet {
+      // display: none;
+    }
+  }
+
+  &__button-sign-up {
+    @include onMobile {
+      // display: none;
+    }
+  }
+}
