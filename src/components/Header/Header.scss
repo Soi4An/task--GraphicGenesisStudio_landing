@@ -4,22 +4,23 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   &__nav {
     @include onMobileAndTablet {
-      // display: none;
+      display: none;
     }
   }
 
   &__button-sign-up {
     @include onMobile {
-      // display: none;
+      display: none;
     }
   }
 
   &__button-menu {
     @include onDesktop {
-      // display: none;
+      display: none;
     }
   }
 }
