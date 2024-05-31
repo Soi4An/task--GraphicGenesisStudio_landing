@@ -1,18 +1,13 @@
 import './App.scss';
-import HeaderAndMenu from './components/HeaderAndMenu/HeaderAndMenu';
+import Header from './components/Header/Header';
 
 
 function App() {
   return (
     <div>
-      <HeaderAndMenu />
-      {/* <Header
-          menuHidden={menuHidden}
-          menuSwitch={menuSwitch}
-          isMenu={isMenu}
-        /> */}
+      <Header />
 
-        <div style={{ height: '600px', backgroundColor: '#ffffff' }} />
+      <div style={{ height: '600px', backgroundColor: '#ffffff' }} />
     </div>
   );
 };

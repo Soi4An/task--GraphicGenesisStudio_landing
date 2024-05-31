@@ -1,27 +1,62 @@
-import ButtonCustom from "../ButtonCustom/ButtonCustom";
-import ButtonMenu from "../ButtonMenu/ButtonMenu";
-import HeaderList from "../HeaderList/HeaderList";
-import Logo from "../Logo/Logo";
-import "./Header.scss";
+import { useCallback, useEffect, useState } from "react";
+import HeaderBar from "../HeaderBar/HeaderBar";
+import Container from "../Container/Container";
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
+import "./HeaderAndMenu.scss";
+import classNames from "classnames";
+import { debounce } from "lodash";
 
-function Header({ menuSwitch, menuHidden, isMenu }) {
+const Header = () => {
+  const [isMenu, setIsMenu] = useState(false);
+
+  const menuSwitch = useCallback(() => setIsMenu((curr) => !curr), []);
+  const menuHidden = useCallback(
+    () =>
+      setIsMenu((curr) => {
+        if (curr === true) {
+          return false;
+        }
+      }),
+    []
+  );
+
+  const handleSetPhotosQuantity = debounce(() => {
+    if (window.innerWidth >= 1440) {
+      menuHidden();
+    }
+  }, 200);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleSetPhotosQuantity);
+
+    return () => {
+      window.removeEventListener("resize", handleSetPhotosQuantity);
+    };
+  }, [handleSetPhotosQuantity]);
+
+  useEffect(() => {
+    if (isMenu) {
+      document.body.classList.add("body__with-menu");
+    } else {
+      document.body.classList.remove("body__with-menu");
+    }
+  }, [isMenu]);
+
   return (
-    <header className="header">
-      <Logo menuHidden={menuHidden} />
+    <header
+      className={classNames("header-menu", { "header-menu--open": isMenu })}
+    >
+      <Container>
+        <HeaderBar
+          menuHidden={menuHidden}
+          menuSwitch={menuSwitch}
+          isMenu={isMenu}
+        />
+      </Container>
 
-      <nav className="header__nav">
-        <HeaderList />
-      </nav>
-
-      <div className="header__button-sign-up">
-        <ButtonCustom text={"Записатися"} type={"black"} />
-      </div>
-
-      <div className="header__button-menu">
-        <ButtonMenu menuSwitch={menuSwitch} isMenu={isMenu} />
-      </div>
+      <DropDownMenu />
     </header>
   );
-}
+};
 
 export default Header;
